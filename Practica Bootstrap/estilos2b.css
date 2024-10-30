@@ -1,0 +1,31 @@
+.col-purple {
+    background-color: #9b59b6; /* color púrpura */
+    height: 100px; /* altura de la barra horizontal */
+    margin-bottom: 10px;
+}
+
+
+.col-green {
+    background-color: #2ecc71; /* color verde */
+    height: 50px; /* altura de la barra horizontal */
+
+
+}
+
+
+.col-vert {
+    background-color: #f5cba7; /* color durazno */
+    height: 450px; /* altura de la barra vertical */
+}
+
+
+.col-blue {
+    background-color: #3498db; /* color azul */
+    height: 100px; /* altura de los bloques azules */
+}
+
+
+/* Puedes ajustar los márgenes de los bloques si es necesario */
+.mb-2 {
+    margin-bottom: 10px;
+}

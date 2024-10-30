@@ -1,0 +1,44 @@
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función:
+mysqli_connect (mysql_connect)
+
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:
+$hostname
+$nombreUsuario
+$contraseña
+
+Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función: mysqli_select_db (mysql_select_db)
+
+Esta función debe pasar como parámetro:$nombreConexión, $nombreBaseDatos
+
+La función mysqli_query () se utiliza para: ejecutar una consulta a la base de datos que especifiquemos
+
+y requiere como parámetros: $nombreConexion, $query
+
+La cláusula or die() se utiliza para: Capturar el error. 
+
+y la función mysqli_error () se puede usar para:
+string mysqli_error ( $link ) Devuelve el último mensaje de error para la llamada más reciente a una función de MySQLi que puede haberse ejecutado correctamente o haber fallado.
+
+Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo $vResult, y a continuación se puede ejecutar el siguiente código (explicarlo):  asd
+
+<?php
+while ($fila = mysqli_fetch_array($vResultado))
+{
+?>
+<tr>
+ <td><?php echo ($fila[0]); ?></td>
+ <td><?php echo ($fila[1]); ?></td>
+ <td><?php echo ($fila[2']); ?></td>
+</tr>
+<tr>
+ <td colspan="5">
+<?php
+}
+mysqli_free_result($vResultado);
+mysqli_close($link);
+?>
+
+Consulta a la base de datos: La consulta SQL se ejecuta y se obtienen los resultados.
+Ciclo while: Itera sobre los resultados fila por fila.
+Generación de la tabla HTML: Se genera una tabla HTML con los datos de cada fila.
+Liberación de recursos: Se libera el conjunto de resultados y se cierra la conexión a la base de datos.

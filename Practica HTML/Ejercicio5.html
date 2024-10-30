@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flexbox</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            background-color: lightgrey;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } 
+        
+        .footer {
+
+            background-color: lightgrey;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+
+        .logo {
+            width: 50px; 
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+        }
+
+        .menu {
+            width: 30%;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .main {
+            width: 70%;
+            padding: 10px;
+            display: none; 
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><b>Encabezado</b></div>
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="content">
+        <div class="menu">
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('articulos')">Artículos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('masInfo')">Más Info</a></li>
+            </ul>
+        </div>
+        <div class="main" id="articulos">
+            <h2>Artículos</h2>
+            <table border="1">
+                <tr>
+                    <th>Artículo</th>
+                    <th>Precio</th>
+                </tr>
+                <tr>
+                    <td>Artículo 1</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Artículo 2</td>
+                    <td>$15</td>
+                </tr>
+            </table>
+        </div>
+        <div class="main" id="masInfo">
+            <h2>Más Información</h2>
+            <p>Para más consultas, escribe a: consultas@empresa.com</p>
+        </div>
+    </div>
+    <div class="footer"> <b>Pie</b>
+        <li><a href="#" onclick="mostrarSeccion('articulos')">Artículos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('masInfo')">Más Info</a></li>
+    </div>
+
+    <script>
+        function mostrarSeccion(seccionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.main').forEach(function(seccion) {
+                seccion.style.display = 'none';
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(seccionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

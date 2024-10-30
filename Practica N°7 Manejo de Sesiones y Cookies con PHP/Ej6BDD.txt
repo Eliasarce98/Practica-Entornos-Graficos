@@ -1,0 +1,22 @@
+Para crear la base de datos, la tabla y usarla
+
+
+CREATE DATABASE base2;
+
+
+USE base2;
+
+CREATE TABLE alumnos (
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    codigocurso VARCHAR(50),
+    mail VARCHAR(100) UNIQUE NOT NULL
+);
+
+Insertamos algunos valores de prueba
+
+INSERT INTO alumnos (nombre, codigocurso, mail) VALUES
+('Juan Pérez', 'C001', 'juan.perez@gmail.com'),
+('Ana Gómez', 'C002', 'ana.gomez@gmail.com'),
+('Luis Fernández', 'C003', 'luis.fernandez@gmail.com');
+

@@ -1,0 +1,215 @@
+1-  variables y su tipo: 
+$a variable tipo boolean
+$b variable tipo string
+$c variable tipo string
+$d variable tipo integer
+
+operadores: 
+
+aritmeticos: *, +=, ++
+
+logicos: ? :
+
+concatenación: . 
+
+asignación: =, +=
+
+funciones y sus parametros:
+
+function doble($i) toma un valor i y devuelve ese valor multiplicado por 2 
+
+estructuras de control 
+
+condicionales (if):
+if (is_int($d)): verifica si $d es de tipo entero.
+if (is_string($a)): verifica si $a es una cadena de texto (no lo es, así que el bloque de código no se ejecuta).
+
+salida por pantalla: booleanstringstringinteger1xyzxyz184444
+
+
+2) a- Si los 3 codigos son equivalentes ya que dan la misma salida por pantalla 12345678910
+
+b- Todos los códigos son equivalentes ya que producen la misma salida: 12345678910. Aunque se estructuran de maneras diferentes.
+
+c-Se puede considerar que son codigos equivalentes ya que los dos tienen el mismo comportamiento, evaluan si i toma el valor 0,1 o 2 y si es alguno de esos valores se imprime por pantalla de lo contrario no se realiza nada 
+
+3) Este código se utiliza para generar una tabla HTML con un número determinado de filas y columnas de forma dinámica. En este caso:
+
+La tabla tendrá 5 filas y 2 columnas.
+Cada celda de la tabla (<td>) estará vacía, pero se le agrega un espacio en blanco (&nbsp;) para que se vea como una celda activa y no colapsada.
+b) Este codigo es un formulario para validar la edad del usuario donde si el formulario no ha sido enviado, es decir no se ha hecho click en el botón “Ir” se muestra el formulario de entrada. El formulario tambien tiene una acción que es  action="<?php echo $_SERVER['PHP_SELF']; ?>" que hace que al enviarse el formulario, vuelva a la misma pagina para ser procesado.
+Cuando el formulario es enviado (isset($_POST['submit']) es verdadero), se captura el valor introducido en el campo "age" y se almacena en la variable $age.
+Luego, se verifica si la edad ingresada es mayor o igual a 21.
+
+4) La salida que produce el codigo es:
+
+El 
+El clavel blanco
+
+La justificación es que en el primer archivo que se llama datos.php defino las dos variables 
+$color = 'blanco';
+$flor = 'clavel';
+
+entonces cuando voy al archivo principal 
+
+<?php
+
+echo "El $flor $color \n";
+include 'datos.php';
+echo " El $flor $color";
+?>
+
+cuando hace el primer echo, en este archivo no están definidas las variables por lo tanto solo mostraría “El” pero cuando hago el include 'datos.php'; estoy llamando al archivo que sí tiene definidas las variables por lo tanto el segundo echo me muestra “El clavel blanco”
+
+
+5)  
+contador.php
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Archivo para acumular el numero de visitas
+$archivo = "contador.dat";
+
+// Abrir el archivo para lectura
+$abrir = fopen($archivo, "r");
+
+// Leer el contenido del archivo
+$cont = fread($abrir, filesize($archivo));
+
+// Cerrar el archivo
+fclose($abrir);
+
+// Abrir nuevamente el archivo para escritura
+$abrir = fopen($archivo, "w");
+
+// Agregar 1 visita
+$cont = $cont + 1;
+
+// Guardar la modificación
+fwrite($abrir, $cont);
+
+// Cerrar el archivo
+fclose($abrir);
+
+// Mostrar el total de visitas
+echo "<font face='arial' size='3'>Cantidad de visitas: " . $cont . "</font>";
+?>
+
+visitas.php
+
+<!-- Página que va a contener al contador de visitas -->
+<html>
+<head>
+    <title>Contador de visitas</title>
+</head>
+<body>
+<?php include("contador.php"); ?>
+</body>
+</html>
+
+contador.dat
+0
+
+—------------------------------------------------------------------------------------------------------
+PHP: arrays, funciones  
+
+1)Son dos codigos equivalentes porque los dos producen el mismo array.
+
+
+
+<?php
+$matriz = array("x" => "bar", 12 => true);
+echo $matriz["x"];
+echo $matriz[12];
+?>
+
+salida correspondiente: bar1
+
+
+<?php
+$matriz = array("unamatriz" => array(6 => 5, 13 => 9, "a" => 42));
+echo $matriz["unamatriz"][6];
+echo $matriz["unamatriz"][13];
+echo $matriz["unamatriz"]["a"];
+?>
+
+salida correspondiente: 5942
+
+2) <?php
+$matriz = array(5 => 1, 12 => 2);
+$matriz[] = 56;
+$matriz["x"] = 42; unset($matriz[5]); unset($matriz);
+?>
+
+no tiene salida visible, no hay ningún echo o similar para mostrar algo en pantalla
+
+     
+ <?php
+$fecha= getdate();
+echo "Has entrado en esta pagina a las $fecha[hours] horas, con $fecha[minutes] minutos y $fecha[seconds]
+segundos, del $fecha[mday]/$fecha[mon]/$fecha[year]";
+?>
+
+3) Has entrado en esta pagina a las 19 horas, con 40 minutos y 44 segundos, del 17/10/2024
+
+
+<?php
+function sumar($sumando1,$sumando2){
+ $suma=$sumando1+$sumando2;
+ echo $sumando1."+".$sumando2."=".$suma;
+}
+sumar(5,6);
+?>
+
+5+6=11
+
+
+
+4) <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset= "UTF-8">
+    <title>comprobar nombre de usuario </title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="nombre de usuario"> Ingrese un nombre de usuario: </label>
+        <input type="text" name="nombre_usuario" id="nombre_usuario" required>
+        <input type="submit" value="Comprobar">
+    </form>
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+function comprobar_nombre_usuario($nombre_usuario){
+ //compruebo que el tamaño del string sea válido.
+ if (strlen($nombre_usuario)<3 || strlen($nombre_usuario)>20){
+ echo $nombre_usuario . " no es válido<br>";
+ return false;
+ }
+ //compruebo que los caracteres sean los permitidos
+ $permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-
+_";
+ for ($i=0; $i<strlen($nombre_usuario); $i++){
+ if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){
+ echo $nombre_usuario . " no es válido<br>";
+ return false;
+ }
+ }
+ echo $nombre_usuario . " es válido<br>";
+ return true;
+} 
+
+$nombre_usuario = $_POST['nombre_usuario'];
+        comprobar_nombre_usuario($nombre_usuario);
+}
+?>
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,41 @@
+.col-purple {
+    background-color: #9b59b6; /* color púrpura */
+    height: 100px; /* altura de la barra horizontal */
+    margin-bottom: 10px;
+}
+
+
+.col-green {
+    background-color: #2ecc71; /* color verde */
+    height: 70px; /* altura de la barra horizontal */
+
+
+}
+
+
+.col-durazno {
+    background-color: #f5cba7;
+    height: 80px;
+}
+
+
+.col-gray {
+    background-color: #808080;
+    height: 80px;
+}
+
+
+.col-blue {
+    background-color: #3498db; /* color azul */
+    height: 100px; /* altura de los bloques azules */
+}
+
+
+
+
+.mb-2 {
+    margin-bottom: 10px;
+}
+
+
+

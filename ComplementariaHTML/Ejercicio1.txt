@@ -1,0 +1,28 @@
+Ejercicio 1)
+
+HTML5 incorpora nuevas características y mejoras que facilitan el desarrollo web y  la experiencia del usuario:
+
+Nuevas etiquetas semánticas: Etiquetas como <header>, <footer>, <article>, y <section> permiten estructurar el contenido de manera más clara y semántica, lo que mejora la accesibilidad y SEO.
+Soporte para multimedia: Permite la integración directa de audio (<audio>) y video (<video>) sin necesidad de plugins externos como Flash.
+Soporte nativo para gráficos y animaciones: Con las etiquetas <canvas> y <svg>, es posible crear gráficos y animaciones directamente en el navegador.
+Mejoras en formularios: Nuevos tipos de campos (<input type="email">, <input type="date">, etc.) y atributos (required, placeholder) que facilitan la validación y la captura de datos de manera más precisa.
+Compatibilidad con dispositivos móviles: HTML5 está diseñado para ser compatible con dispositivos móviles, lo que permite desarrollar aplicaciones web y sitios responsivos con facilidad.
+API y características avanzadas: Ofrece APIs que permiten desarrollar aplicaciones web más interactivas y dinámicas, como la API de geolocalización, almacenamiento local (localStorage), y aplicaciones offline (Service Workers).
+
+¿Por qué utilizarlo?
+
+Compatibilidad y soporte moderno: La mayoría de los navegadores modernos soportan HTML5, lo que garantiza una mejor compatibilidad y un mejor rendimiento para las aplicaciones web.
+Facilidad de desarrollo: Las nuevas etiquetas y características semánticas hacen que el código sea más legible y organizado, facilitando el mantenimiento y la colaboración entre desarrolladores.
+Interactividad y multimedia: Con HTML5, es posible integrar multimedia y gráficos sin necesidad de plugins adicionales, lo que mejora la experiencia del usuario y simplifica el desarrollo.
+Optimización para móviles: HTML5 permite desarrollar sitios y aplicaciones que se adaptan mejor a dispositivos móviles, lo cual es esencial en un mundo donde gran parte del tráfico web proviene de smartphones y tablets.
+Mejora en la accesibilidad: Las etiquetas semánticas ayudan a los lectores de pantalla y otras tecnologías asistivas a interpretar mejor el contenido, haciendo que las páginas sean más accesibles para personas con discapacidades.
+
+Nombre ventajas
+
+Estructura semántica clara: Mejora la legibilidad del código y SEO.
+Multimedia nativa: Soporte directo para audio y video sin plugins.
+APIs avanzadas: Geolocalización, almacenamiento local, y aplicaciones offline.
+Compatible con dispositivos móviles: Optimiza el diseño para diferentes dispositivos.
+Mejoras en formularios: Validaciones y tipos de input avanzados.
+
+

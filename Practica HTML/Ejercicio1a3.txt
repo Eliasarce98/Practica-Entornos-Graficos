@@ -1,0 +1,236 @@
+1.       Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+HTML es el lenguaje estándar para crear y diseñar páginas web. Proporciona la estructura y disposición del contenido, lo que incluye texto, imágenes, enlaces y multimedia. Es el marco que los navegadores interpretan para mostrar las páginas a los usuarios. HTML define la jerarquía de títulos, el flujo de párrafos y la ubicación de imágenes; es el esqueleto de tu sitio web.
+Cuando fue creado
+Fue creado en 1989 por Tim Berners-Lee que marcó el nacimiento de la World Wide Web. Diseñado inicialmente para compartir información en el CERN, el HTML se convirtió rápidamente en el lenguaje universal para estructurar documentos web.
+La primera versión del HTML en 1991 estableció los cimientos de la web moderna con etiquetas básicas para párrafos y encabezados. Mosaic, lanzado en 1993, aumentó la popularidad de HTML e impulsó la expansión de Internet. El HTML 2.0 en 1995 mejoró el lenguaje con tablas, formularios e imágenes que enriquecieron las páginas web.
+
+ El HTML siguió avanzando a la versión 4.01 en 1999, la cual introdujo reglas sintácticas más estrictas y mejor soporte multimedia. Esta versión permitió a los desarrolladores web a crear contenidos más dinámicos e interactivos. En 2014, HTML5 la cual es la última versión trajo nuevas funciones como reproducción nativa de audio y video, gráficos avanzados con <canvas> y un etiquetado semántico mejorado.
+2.       ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+El W3C recomienda que al crear documentos HTML se sigan ciertos principios clave para garantizar sitios web accesibles, eficientes y sostenibles. Primero, es esencial usar etiquetas semánticas correctamente, lo que hace que el contenido sea más comprensible tanto para usuarios como para tecnologías de asistencia. La accesibilidad es también crucial, asegurando que todos los usuarios, incluidas personas con discapacidades, puedan interactuar con el sitio web.
+Además, se debe buscar la compatibilidad con distintos navegadores y dispositivos, evitando depender de tecnologías específicas. El diseño debe ser intuitivo, con una estructura de navegación clara y contenido fácil de entender. También es importante optimizar el rendimiento, usando código limpio y eficiente para mejorar la velocidad de carga. Finalmente, es esencial que el código sea seguro y fácil de mantener, adhiriéndose a los estándares más recientes para asegurar la sostenibilidad y compatibilidad futura.
+3.       En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y obsoleto?
+ 
+Desaprobado
+ 
+Un elemento o atributo desaprobado es aquel que ha quedado anticuado por la presencia de estructuras nuevas. Los elementos desaprobados se definen en el manual de referencia en los lugares apropiados, pero claramente marcados como desaprobados. Los elementos desaprobados pueden declararse obsoletos en versiones futuras de HTML.
+Los agentes de usuario deberían seguir dando soporte a los elementos desaprobados por razones de compatibilidad con versiones anteriores.
+ 
+Las definiciones de elementos y atributos indican claramente cuáles son desaprobados.
+ 
+Esta especificación incluye ejemplos que ilustran cómo evitar el uso de elementos desaprobados. En la mayoría de los casos estos ejemplos dependen de que el agente de usuario soporte hojas de estilo. En general, los autores deberían usar hojas de estilo para lograr efectos estilísticos y de formato de presentación en lugar de utilizar atributos presentacionales de HTML. Los atributos de presentación de HTML han sido desaprobados cuando existen alternativas con hojas de estilo (véase, por ejemplo, [CSS1]).
+ 
+Obsoleto
+ 
+Un elemento o atributo obsoleto es aquél para el cual no hay garantía de soporte por parte de un agente de usuario. Los elementos obsoletos han dejado de estar definidos en la especificación, pero se enumeran por motivos históricos en la sección de cambios del manual de referencia.
+ 
+4.       Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+ 
+Un documento HTML válido declara qué versión de HTML se utiliza en el documento. La declaración del tipo de documento especifica la definición del tipo de documento (DTD) que se usa en el documento.
+HTML 4.01 especifica tres DTDs, de modo que los autores deben incluir una de las siguientes declaraciones del tipo de documento en sus documentos. Los DTDs varían en cuanto a los elementos que soportan.
+·         El DTD HTML 4.01 Estricto (Strict DTD) incluye todos los elementos y atributos que no han sido desaprobados o que no aparecen en documentos con marcos. Para los documentos que usen este DTD, utilice esta declaración del tipo de documento:
+·         <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+·         El DTD HTML 4.01 Transicional (Transitional DTD) incluye todo lo que incluye el DTD estricto más los elementos y atributos desaprobados (la mayoría de los cuales están relacionados con la presentación visual). Para los documentos que usen este DTD, utilice esta declaración del tipo de documento:
+·         <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+·         El DTD HTML 4.01 para Documentos con Marcos (Frameset DTD) incluye todo lo que incluye el DTD Transicional más los marcos. Para los documentos que usen este DTD, utilice esta declaración del tipo de documento:
+·         <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+ 
+5.       Qué son los metadatos y cómo se especifican en HTML?
+ 
+El HTML permite a los autores especificar metadatos -- información sobre un documento más que contenido del propio documento -- de diferentes de maneras.
+ 
+Por ejemplo, para especificar el autor de un documento, puede utilizarse el elemento META como sigue:
+ 
+<META name="Author" content="Dave Raggett">
+El elemento META especifica una propiedad (aquí "Author") y le asigna un valor (aquí "Dave Raggett").
+ 
+Esta especificación no define un conjunto de propiedades legales de metadatos. El significado de una propiedad y el conjunto de valores legales para esa propiedad debería estar definida en un diccionario de referencia llamado perfil. Por ejemplo, un perfil diseñado para ayudar a los motores de búsqueda a indexar documentos podría definir propiedades tales como "author", "copyright", "keywords", etc.
+ 
+Especificación de metadatos
+En general, la especificación de metadatos implica dos pasos:
+ 
+Declaración de una propiedad y de un valor para esta propiedad. Esto puede hacerse de dos maneras:
+Desde dentro de un documento, por medio del elemento META.
+Desde fuera de un documento, vinculando los metadatos por medio del elemento LINK (véase la sección sobre tipos de vínculos).
+Referencia a un perfil en el que se definen la propiedad y sus valores legales. Para designar un perfil, se usa el atributo profile del elemento HEAD.
+Obsérvese que al estar definido un perfil por el elemento HEAD, se aplica el mismo perfil a todos los elementos META y LINK de la cabecera del documento.
+ 
+Los agentes de usuario no necesitan soportar los mecanismos de metadatos. Para aquellos que opten por soportar metadatos, esta especificación no define cómo deberían interpretarse los metadatos.
+ 
+Ejercicio 2
+
+  2.a)
+<!-- Código controlado el día 12/08/2009 -- >  Esto es un comentario , este segmento puede colocarse en cualquier parte del codigo html, se utilizan para agregar notas o explicaciones dentro del codigo que no son visibles en la pagina web.
+ 
+2.b)
+<div id="bloque1">Contenido del bloque1</div>
+ 
+Este segmento de código crea un elemento div dentro de la sección <body> del documento HTML. El div actúa como un contenedor de bloque que incluye el texto "Contenido del bloque1". El atributo id="bloque1" identifica este div de forma única, permitiendo aplicar estilos o realizar manipulaciones mediante CSS o JavaScript.
+ 
+2.c)
+<img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" longdesc="detalles.htm" />
+ 
+Este codigo incluye la etiqueta <img> para insertar una imagen. Aunque el atributo src está vacío, se configuran otros atributos como alt, id, name, width, height y longdesc. El atributo alt es obligatorio y proporciona texto alternativo para la imagen, mientras que src es obligatorio para especificar la fuente de la imagen. Los demás atributos son opcionales y sirven para ajustar el tamaño, proporcionar información adicional y facilitar el acceso.
+ 
+2.d)
+<meta name="keywords" lang="es" content="casa, compra, venta, alquiler " /> <meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+ 
+·         name="keywords": Define palabras clave relacionadas con el contenido de la página para los motores de búsqueda. Aunque los motores de búsqueda modernos ignoran este atributo en gran medida, todavía se usa para otros propósitos y algunos motores de búsqueda pueden considerarlo. (opcional)
+·         lang="es": Especifica el idioma del contenido para los motores de búsqueda y herramientas de accesibilidad. En este caso, indica que el contenido está en español. (opcional)
+·         content="casa, compra, venta, alquiler": Proporciona las palabras clave que describen el contenido del sitio. (opcional)
+·         http-equiv="expires": Especifica una fecha de expiración para el contenido en caché. Los navegadores y proxies pueden usar esta información para decidir cuándo volver a cargar la página. (opcional)
+·         content="16-Sep-2019 7:49 PM": Proporciona la fecha y hora en que el contenido debe considerarse expirado. (opcional)
+ 
+2.e)
+<a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" rel="help">Resumen HTML </a>
+ 
+La etiqueta <a> crea un enlace que lleva al usuario a la URL especificada en el atributo href. Al hacer clic en el texto "Resumen HTML", el navegador redirigirá a la página en la URL proporcionada.
+En cuanto a los atributos mencionados tenemos:
+href: Obligatorio para especificar la URL a la que el enlace llevará al usuario.
+type: Opcional porque especifica el tipo de recurso enlazado.
+hreflang: Opcional, indica idioma del contenido de la URL.
+charset: Opcional, indica la codificación de caracteres del recurso enlazado.
+ 
+2.f)
+<table width="200" summary="Datos correspondientes al ejercicio vencido"> <caption align="top"> Título </caption>
+<tr>
+<th scope="col"> </th> <th scope="col">A</th> <th scope="col">B</th> <th scope="col">C</th>
+</tr> <tr>
+<th scope="row">1º</th> <td> </td> <td> </td> <td> </td>
+</tr> <tr>
+<th scope="row">2º</th> <td> </td> <td> </td> <td> </td>
+</tr> </table>
+ 
+Este codigo corresponde a una tabla la cual se ubicará dentro del la etiqueta <body>
+La etiqueta <table> crea una tabla con un ancho de 200 píxeles. Dentro de la tabla:
+·         <caption> agrega un título a la tabla.
+·         <tr> define una fila dentro de la tabla.
+·         <th> define una celda de encabezado de tabla.
+·         <td> define una celda de datos en la tabla.
+ 
+Dentro de la etiqueta <table>
+el atributo width es opcional. Define el ancho de la tabla en pixeles
+ el atributo summary es opcional.
+Dentro de la etiqueta <caption>
+El atributo align es opcional. Define la alineación del titulo en la tabla.
+Etiqueta <tr>: Opcional. Especifica si la celda de encabezado aplica a una columna (col) o fila (row).
+ 
+Ejercitación 3
+En cada caso, explicar las diferencias entre los segmentos de código y sus visualizaciones: 3.a)
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a> <href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a> <a href="http://www. google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help"> <a href="#">Click aquí para ir a Google</a>
+<a href="#arriba">Click aquí para volver arriba</a>
+<a name="arriba" id="arriba"></a>
+ 
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+Este primer enlace redirecciona al usuario a la URL específica  http://www.google.com.ar haciendo click sobre el mismo 
+ 
+<href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+ 
+Similar al primer enlace, pero con el atributo target="_blank", que indica que el enlace se abrirá en una nueva ventana o pestaña del navegador.
+ 
+href="http://www. google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help"> <a href="#">Click aquí para ir a Google</a>
+ 
+Descripción: Este enlace también lleva a http://www.google.com.ar, pero incluye atributos adicionales:
+·         type="text/html": Especifica el tipo de contenido del recurso enlazado (opcional)
+·         hreflang="es": Indica que el contenido del enlace está en español.
+·         charset="utf-8": Indica la codificación de caracteres del recurso enlazado (no estándar para <a> en HTML5).
+·         rel="help": Sugiere que el enlace proporciona información de ayuda.
+Visualización: El texto del enlace será el mismo que en los anteriores.
+rel="help"> <a href="#">Click aquí para ir a Google</a>
+Descripción: Este enlace tiene un href="#", que por lo general lleva al usuario al principio de la página o no realiza ninguna acción si no hay un script asociado.
+Visualización: El texto del enlace será el mismo.
+Comportamiento: Al hacer clic, no redirige a otra página sino que puede hacer que la página se desplace al principio si hay contenido en la misma página.
+<a href="#arriba">Click aquí para volver arriba</a> <a name="arriba" id="arriba"></a>
+Descripción: Este enlace utiliza el href="#arriba" para enlazar a un punto específico en la misma página. En este caso, el destino es el elemento con id="arriba".
+Visualización: El texto del enlace será el mismo.
+Comportamiento: Al hacer clic, la página se desplazará al elemento con id="arriba", que es una referencia a una ancla en la misma página.
+<a name="arriba" id="arriba"></a>
+Descripción: Este elemento define un punto de anclaje en la página con name="arriba" y id="arriba". En HTML5, se recomienda usar solo id para definir anclas.
+Visualización: Este elemento no tiene contenido visible.
+Comportamiento: Sirve como destino para el enlace que utiliza href="#arriba", permitiendo que la página se desplace a este punto.
+ 
+3.b) <p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p>
+Este segmento muestra primero una imagen y luego un enlace al lado de la imagen con el texto "Click aquí".
+Visualización: La imagen im1.jpg aparecerá seguida inmediatamente por el texto "Click aquí", que será un enlace clicable a Google. Ambos elementos están en la misma línea porque están dentro del mismo párrafo <p>.
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+La imagen im1.jpg está dentro de un enlace. Después de la imagen, hay un espacio seguido del texto "Click aquí", que no es parte del enlace.
+Visualización: La imagen im1.jpg será clickeable y redirigirá a Google. El texto "Click aquí" se mostrará después de la imagen, pero no será parte del enlace, es decir, solo la imagen será el enlace.
+ 
+ 
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" />Click aquí</a></p>
+Descripción: Aquí, tanto la imagen im1.jpg como el texto "Click aquí" están dentro del enlace <a>, lo que significa que ambos elementos redirigirán a Google.
+Visualización: La imagen y el texto "Click aquí" serán parte del mismo enlace, es decir, ambos serán clicables y llevarán al usuario a Google.
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a href="http://www.google.com.ar">Click aquí</a></p>
+Descripción: En este caso, la imagen im1.jpg es un enlace separado del texto "Click aquí". Ambos elementos tienen sus propios enlaces a la misma URL.
+Visualización: Tanto la imagen como el texto "Click aquí" serán clicables, pero cada uno actuará como un enlace independiente. Al hacer clic en cualquiera de los dos, el usuario será redirigido a Google, pero no están combinados en un solo enlace.
+ 
+ 
+3)c)    	<ul>
+<li>xxx</li>
+<li>yyy</li>
+<li>zzz</li>
+</ul>
+En este primer caso la etiqueta <ul> <ul/> nos genera un lista desordenada donde dentro tenemos la etiqueta <li></li> que lo que hace es definir cada elemento.
+Con respecto a la visualización la lista se verá así:
+·         xxx
+·         yyy
+·         zzz
+<ol>
+<li>xxx</li>
+<li>yyy</li>
+<li>zzz</li>
+</ol>
+En esta situación la etiqueta <ol> genera una lista ordenada donde dentro tenemos la etiqueta <li></li> que lo que hace es definir cada elemento. A diferencia del anterior en este los elementos de la lista estarán numerados automaticamente por el navegador viendose de esta manera
+ 
+1.       xxx
+2.       yyy
+3.       zzz
+<ol>
+<li>xxx</li>
+</ol>
+<ol>
+<li value="2">yyy</li>
+</ol>
+<ol>
+<li
+value="3">zzz</li>
+</ol>
+ 
+En este fragmento de codigo se muestran 3 listas ordenadas donde cada una contiene un solo elemento. Las dos ultimas contienen el atributo “value” para especificar el valor numerico que debe asignarse al elemento de la lista.
+Se ve de esta manera:
+ 
+1.       xxx
+2.       yyy
+3.       zzz
+<blockquote>
+<p>1. xxx<br />
+2. yyy<br />
+3. zzz</p>
+</blockquote>
+ 
+Este fragmento de codigo utiliza la etiqueta <blockquote> para crear un bloque de codigo donde dentro se encuentra la etiqueta <p></p> que define un parrafo y se crea la lista manualmente forzando el salto de linea con la etiqueta <br/>
+1.       xxx
+2.       yyy
+3.       zzz
+3)d) El primer código usa <th> para los títulos de las columnas, lo que aplica formato de alineación y negrita, mientras que el segundo código utiliza <td> y formatea manualmente el texto con <strong> y un contenedor <div>.
+En el segundo código, la alineación al centro es manual mediante el atributo align="center", mientras que en el primer código es automática usando la de <th>.
+Ambas tablas se verán similares, pero el primer código es más semánticamente correcto para una tabla con encabezados de columna.
+3)e) En la primera tabla, el título está dentro de la etiqueta <caption>, que es una etiqueta específica para el título de una tabla. Aparece centrado encima de la tabla por defecto.
+En la segunda tabla, el título está dentro de una celda de la tabla (en la primera fila) y se centra manualmente usando un contenedor <div align="center">. Además, esta celda abarca las tres columnas gracias al atributo colspan="3"
+ 
+3)f) En el primer código, se usa rowspan="2" en la segunda fila, lo que hace que la primera celda abarque dos filas verticalmente.
+En el segundo código, se usa colspan="2" en la segunda fila, lo que hace que las primeras dos celdas se fusionen horizontalmente en una fila.
+3)g) El segundo codigo usa cellpadding="0" y cellspacing="0", eliminando el espacio entre celdas y el relleno dentro de las celdas.
+En el primer codigo la celda de la primera fila tiene colspan="3". En la segunda fila, la celda usa colspan="2" y rowspan="2", abarcando dos columnas y dos filas.
+En el segundo codigo la celda de la primera fila tiene colspan="2". En la segunda fila, la celda usa rowspan="2", extendiéndose verticalmente pero sin colspan.
+3)h) Los formularios 1 y 3 utilizan el method="post", que envía los datos en el cuerpo de la solicitud, ocultando los datos de la URL.
+El formulario 2 utiliza el method="get", que envía los datos en la URL de la solicitud.
+El formulario 1 envía datos a un archivo PHP (procesar.php) en el servidor, ademas incluye valores predeterminados en los campos de entrada. Utiliza input type="submit", que envía el formulario. No usa label
+El formulario 2 no especifica la acción lo que significa que los datos se envían a la misma URL del documento actual, ademas no tiene valores predeterminados en los campos de entrada. Utiliza input type="submit", que envía el formulario. Usa label para asociar etiquetas con campos de entrada, lo que mejora la accesibilidad.
+El formulario 3 envía los datos a una dirección de correo electrónico, lo que abre el cliente de correo del usuario para enviar un correo. Usa enctype="text/plain", lo que envía los datos en formato de texto plano. Utiliza input type="reset", que restablece los valores del formulario en lugar de enviarlo. No usa label
+3)i) <button> se puede incluir contenido HTML dentro del botón (imágenes, texto con formato, etc.). Es más flexible y permite una mayor personalización.
+<input type="button"> solo permite establecer el texto del botón a través del atributo value. Es menos flexible y solo admite texto simple. Solo permite texto plano a través del atributo value
+3)j) En el primer codigo los radio buttons están en el mismo grupo (name="opcion"), lo que permite seleccionar solo una opción entre ellos.
+En el segundo codigo los radio buttons están en grupos diferentes (name="opcion1" y name="opcion2"), lo que permite seleccionar ambos botones de radio si pertenecen a grupos distintos, aunque en la práctica es poco común usar esta configuración.
+3)k) El primer codigo utiliza un <select> con un solo grupo de opciones y permite seleccionar solo una opción a la vez.
+El segundo código utiliza un <select> con el atributo multiple, permitiendo seleccionar varias opciones a la vez.
+Ambos códigos usan <optgroup> para organizar las opciones en grupos, pero la funcionalidad de selección múltiple en el segundo código es la principal diferencia.

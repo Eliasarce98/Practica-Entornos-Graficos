@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <!-- Enlace a Bootstrap CSS para estilizar el formulario -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Formulario de Contacto</h2>
+        <form>
+            <!-- Campo Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+           
+            <!-- Campo Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required>
+            </div>
+           
+            <!-- Campo Teléfono -->
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su teléfono" required>
+            </div>
+           
+            <!-- Campo Asunto -->
+            <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" class="form-control" id="asunto" placeholder="Ingrese el asunto" required>
+            </div>
+           
+            <!-- Campo Cuerpo del Mensaje -->
+            <div class="form-group">
+                <label for="mensaje">Cuerpo del mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" placeholder="Escriba su mensaje aquí"></textarea>
+            </div>
+           
+            <!-- Botón Enviar -->
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+
+    <!-- Enlace a Bootstrap JS y jQuery para funcionalidad adicional si es necesario -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
